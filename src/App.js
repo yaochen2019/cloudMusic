@@ -1,13 +1,15 @@
 import React from 'react';
 
-
+import Main from './pages/main';
 
 
 
 function App() {
   return (
     
-      <div>app页面</div>
+      <div>
+        <Main/>
+      </div>
   
   );
 }
