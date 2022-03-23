@@ -1,0 +1,51 @@
+{
+  "id": "3269812",
+  "name": "QQmusic",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2121740",
+      "name": "推荐",
+      "font_class": "tuijian",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "5387545",
+      "name": "视频",
+      "font_class": "shipin",
+      "unicode": "eafb",
+      "unicode_decimal": 60155
+    },
+    {
+      "icon_id": "7338225",
+      "name": "qq音乐",
+      "font_class": "qqyinle",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "11088365",
+      "name": "QQ音乐-01",
+      "font_class": "QQyinle-",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "18940614",
+      "name": "电台",
+      "font_class": "diantai",
+      "unicode": "e693",
+      "unicode_decimal": 59027
+    },
+    {
+      "icon_id": "18941494",
+      "name": "音乐馆",
+      "font_class": "yinleguan",
+      "unicode": "e694",
+      "unicode_decimal": 59028
+    }
+  ]
+}
