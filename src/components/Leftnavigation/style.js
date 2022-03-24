@@ -17,9 +17,6 @@ align-items: center;
 }
 
 `
-
-
-
 export const SymblWapper = styled.div`
   display: flex;
   width: 80px;
@@ -33,30 +30,19 @@ export const SymblWapper = styled.div`
   i{
     font-size: 80px;
   }
-  
-  
-  
-
 `
 
 export const OnlineMusicWapper = styled.ul`
   display: flex;
- 
   width: 100%;
   height: 30%;
   margin-top: 20px;
   text-align: center;
   flex-direction: column;
-  
-  
   .selectitem{
     flex-grow: 1;
-    
-
   }
   a{
-    
-    
     display: block;
     display: flex;
     height: 100%;

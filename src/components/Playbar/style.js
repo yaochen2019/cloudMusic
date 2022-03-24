@@ -21,7 +21,6 @@ export const Bottomwarpper = styled.div`
     left: -6px;
     top: 10px;
 }
-
 `
 export const PlaybarWarpper = styled.div`
 height: 52px;
@@ -55,7 +54,6 @@ font-size: 5px;
             padding-left: 10px;
         }
     }
-
 }
 .playbutton{
     height: 100%;
@@ -71,7 +69,5 @@ font-size: 5px;
         padding: 5px;  
         
     }
-
 }
-
 `
