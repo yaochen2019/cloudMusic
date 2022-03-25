@@ -3,25 +3,19 @@ import { PlaybarWarpper, Bottomwarpper } from './style'
 import { Slider } from 'antd'
 import { Link } from 'react-router-dom'
 import 'antd/dist/antd.css'
-
 export default function Playbar() {
 
   function onChange(value) {
     console.log('onChange: ', value);
   }
-
   function onAfterChange(value) {
     console.log('onAfterChange: ', value);
   }
-
   return (
     <Bottomwarpper>
       <Slider onChange={onChange} onAfterChange={onAfterChange} defaultValue={30} disabled={false} />
       <PlaybarWarpper>
-
-
         <div className='img'></div>
-
         <div className='songinfowarpper' >
           <div className='songinfo' >
             <Link to="/recommend"><span>歌名</span></Link>

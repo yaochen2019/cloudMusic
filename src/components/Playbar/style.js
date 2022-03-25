@@ -42,8 +42,7 @@ font-size: 5px;
     flex-grow: 0.25;
     .songinfo{
         margin-left: -15px;
-        flex-grow: 1;
-        
+        flex-grow: 1;    
     }
     .smallicon{
         flex-grow: 1;

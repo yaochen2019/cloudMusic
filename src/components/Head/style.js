@@ -16,8 +16,7 @@ export const Headwarpper = styled.ul`
       height: 40px;
       display: flex;
       margin-left: 10px;
-      flex-grow: 1.5;
-    
+      flex-grow: 1.5;  
       align-items: center;
       justify-content: center;
       i{
