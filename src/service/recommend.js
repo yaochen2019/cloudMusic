@@ -1,7 +1,7 @@
-import request from 'axios'
+import request from './axios'
 
 export function getHotRecommend() {
   return request({
-    url: "/personalized"
+    url:"/personalized"
   })
 }

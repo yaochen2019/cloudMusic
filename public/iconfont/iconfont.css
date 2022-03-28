@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3269812 */
-  src: url('iconfont.woff2?t=1648102486391') format('woff2'),
-       url('iconfont.woff?t=1648102486391') format('woff'),
-       url('iconfont.ttf?t=1648102486391') format('truetype');
+  src: url('iconfont.woff2?t=1648296287076') format('woff2'),
+       url('iconfont.woff?t=1648296287076') format('woff'),
+       url('iconfont.ttf?t=1648296287076') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,14 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-24gf-playCircle:before {
+  content: "\ea82";
+}
+
+.icon-tingge:before {
+  content: "\e718";
 }
 
 .icon-shangyiyehoutuifanhui:before {

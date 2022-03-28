@@ -1,4 +1,5 @@
 import Recommend from "../pages/Recommend"
+import React from "react"
 import Music from "../pages/Music"
 import Video from "../pages/Video"
 import Broadcasting from "../pages/Broadcasting"

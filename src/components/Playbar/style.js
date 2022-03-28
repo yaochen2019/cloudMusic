@@ -7,7 +7,7 @@ export const Bottomwarpper = styled.div`
   flex-direction: column;
   position: fixed;
   z-index: 99;
-  left: 17%;
+  left: 210px;
   right: 0;
   bottom: 0;
   height: 80px;

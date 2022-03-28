@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export  const LeftnavigationWapper = styled.div`
 display: flex;
-width: 17%;
+width: 210px;
 height: 100%;
 position: fixed;
 background-color: rgb(85,185,198);
@@ -15,7 +15,6 @@ align-items: center;
   margin-top: 40px;
   
 }
-
 `
 export const SymblWapper = styled.div`
   display: flex;
@@ -56,8 +55,6 @@ export const OnlineMusicWapper = styled.ul`
   }
   
   a:hover{
-    
-
     background-color: rgb(122,199,209);
   }
 

@@ -1,0 +1,1 @@
+export const CHANGE_HOT_RECOMMEND = "recommend/CHANGE_HOT_RECOMMEND";

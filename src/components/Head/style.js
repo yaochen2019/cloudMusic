@@ -5,10 +5,10 @@ export const Headwarpper = styled.ul`
   flex-direction: row;
   position: fixed;
   z-index: 99;
-  left: 17%;
+  left: 210px;
   right: 0;
   top: 0;
-  width: 83%;
+  width: 100%;
   height: 50px;
   align-items: center;
   background-color: rgb(77,161,173);
