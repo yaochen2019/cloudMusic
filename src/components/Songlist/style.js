@@ -5,7 +5,6 @@ export const SonglistWarpper = styled.div`
 position: relative;
 width: ${props => props.width};
 height: ${props => props.height};
-margin-left: 80px;
 .cover-top{
     margin-top: 15px;
     position: relative;
@@ -20,8 +19,7 @@ margin-left: 80px;
         transform: translateX(-50%) translateY(-50%);
         color: white;
         .buttonicon{
-            font-size: 60px;
-           
+            font-size: 60px;           
         }
 
     }
@@ -72,6 +70,10 @@ img{
     width: 200px;
     position: absolute;
     bottom: 10px;
+
+}
+.cover-bottom:hover{
+    color: rgb(31,208,175);
 
 }
 `

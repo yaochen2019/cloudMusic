@@ -61,4 +61,7 @@ a,span,p{
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+a:hover span:hover{
+	color: rgb(31,208,175);
+}
 
