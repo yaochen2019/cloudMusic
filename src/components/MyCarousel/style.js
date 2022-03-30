@@ -11,13 +11,10 @@ width: 100%;
     justify-content: space-between;
     flex-direction: row;
         .MyCarouselplay{
-          width: 576px;
-          height:160px;
+          width: 576px;  
           border-radius: 15px;
           color:#fff;
-          line-Height:160px;
           text-Align:center;
-          background:#364d79;
         }
 }
 .slick-dots{

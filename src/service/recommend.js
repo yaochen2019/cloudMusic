@@ -5,3 +5,9 @@ export function getHotRecommend() {
     url:"/personalized"
   })
 }
+
+export function getHotCarouselImg() {
+  return request({
+    url:"/banner"
+  })
+}

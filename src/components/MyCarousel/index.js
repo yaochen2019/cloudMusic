@@ -1,35 +1,30 @@
 import React from 'react'
 import 'antd/dist/antd.css'
-import {MyCarouselWarpper} from './style'
+import { MyCarouselWarpper } from './style'
 import { Carousel } from 'antd'
-export default function MyCarousel() {
+export default function MyCarousel(props) {
+    let temp_item
     return (
         <MyCarouselWarpper>
             <Carousel autoplay>
-                <div>
-                <div className='content'>
-                    <h3 className='MyCarouselplay'>1</h3>
-                    <h3 className='MyCarouselplay'>1</h3>
-                </div>
-                </div>
-                <div>
-                <div className='content' >
-                    <h3 className='MyCarouselplay'>2</h3>
-                    <h3 className='MyCarouselplay'>2</h3>
-                </div>
-                </div>
-                <div>
-                <div className='content' >
-                    <h3 className='MyCarouselplay'>3</h3>
-                    <h3 className='MyCarouselplay'>3</h3>
-                </div>
-                </div>
-                <div>
-                <div className='content' >
-                    <h3 className='MyCarouselplay'>4</h3>
-                    <h3 className='MyCarouselplay'>4</h3>
-                </div>
-                </div>
+                {
+                    props.info.slice(0, 8).map((item, index) => {
+
+                        if (index % 2 === 0) {
+                            temp_item = item
+                            return ""
+                        } else {
+
+                            return (<div>
+                                <div className='content'>
+                                    <img className='MyCarouselplay' alt='正在加载' src={temp_item.imageUrl} />
+                                    <img className='MyCarouselplay' alt='正在加载' src={item.imageUrl} />
+                                </div>
+                            </div>)
+                        }
+                    })
+                }
+
             </Carousel>
         </MyCarouselWarpper>
     )

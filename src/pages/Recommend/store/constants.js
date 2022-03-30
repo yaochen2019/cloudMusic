@@ -1,1 +1,2 @@
 export const CHANGE_HOT_RECOMMEND = "recommend/CHANGE_HOT_RECOMMEND";
+export const CHANGE_CAROUSEL_IMG = "recommend/CHANGE_CAROUSEL_IMG"
