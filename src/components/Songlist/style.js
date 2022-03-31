@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 
 export const SonglistWarpper = styled.div`
+display: flex;
 position: relative;
 width: ${props => props.width};
-height: ${props => props.height};
 .cover-top{
     margin-top: 15px;
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: ${props => props.width};
+    
     transition: all 0.3s;
     .playbutton{
         display: none;
@@ -40,8 +40,8 @@ height: ${props => props.height};
     }
 }
 img{ 
-    width: 200px;
-    height: 200px;
+    width: ${props => props.width};
+    
     border-radius: 15px;
 }
 .mask{
@@ -49,8 +49,8 @@ img{
     overflow: visible;
     position: absolute;
     top: 0px;
-    width: 200px;
-    height: 200px;
+    width:${props => props.width};
+    height: 100%;
     border-radius: 15px;
     background-color:rgba(0,0,0,0.3);
 }
@@ -67,13 +67,11 @@ img{
 
 }
 .cover-bottom{
-    width: 200px;
-    position: absolute;
+    width: ${props => props.width};
     bottom: 10px;
 
 }
 .cover-bottom:hover{
     color: rgb(31,208,175);
-
 }
 `

@@ -15,12 +15,12 @@ export default function MyCarousel(props) {
                             return ""
                         } else {
 
-                            return (<div>
-                                <div className='content'>
-                                    <img className='MyCarouselplay' alt='正在加载' src={temp_item.imageUrl} />
-                                    <img className='MyCarouselplay' alt='正在加载' src={item.imageUrl} />
-                                </div>
-                            </div>)
+                            return (<div key={item.targetId} >
+                                       <div className='content'>
+                                            <img className='MyCarouselplay' alt='正在加载' src={temp_item.imageUrl} />
+                                            <img className='MyCarouselplay' alt='正在加载' src={item.imageUrl} />
+                                       </div>
+                                    </div>)
                         }
                     })
                 }
