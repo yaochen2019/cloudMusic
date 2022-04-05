@@ -5,4 +5,5 @@ export const Appright = styled.div`
     padding-bottom: 80px;
     min-height: 1000px; 
     background: rgb(249, 249, 249);
+    overflow: auto;
 `

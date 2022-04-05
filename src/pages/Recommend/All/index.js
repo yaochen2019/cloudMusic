@@ -14,7 +14,6 @@ export default function All() {
   useEffect(() => {
     dispatch(getNewSong('全部'))
   }, [dispatch]);
-  console.log(newsong);
   function getpublishTime(time)
   {
     let d = new Date(time)

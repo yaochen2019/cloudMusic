@@ -47,13 +47,16 @@ table {
 }
 a{
 	text-decoration: none;
+}
+
+a{
+	color: #000;
+}
+span{
 	color: #000;
 }
 div{
 	color: #000;
-}
-a,span,p{
-	color: rgb(222,241,244);
 }
 
 .text-nowrap {
@@ -61,7 +64,21 @@ a,span,p{
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-a:hover span:hover{
+
+
+.click{
+	font-size: 17px;
+	color: rgb(31,208,175);
+	border-bottom: 4px solid rgb(31,208,175);
+}
+.noclick:hover{
 	color: rgb(31,208,175);
 }
+.noclick{
+	font-size: 17px;
+	color: black;
+}
+
+
+
 

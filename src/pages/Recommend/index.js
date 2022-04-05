@@ -25,6 +25,7 @@ export default function Recommend() {
     dispatch(getRecommendMv())
     dispatch(getPrivateContent())
   }, [dispatch]);
+  console.log("recommends",recommends);
 
 
   return (
@@ -38,7 +39,7 @@ export default function Recommend() {
             recommends.slice(0, 5).map((item, index) => {
 
               return (
-                <Songlist key={item.id} width='200px' playcount={item.playCount} name={item.name} imgsrc={item.picUrl} />
+                <Songlist key={item.id} id={item.id} width='200px'  playcount={item.playCount} name={item.name} imgsrc={item.picUrl} />
               )
             })
           }
@@ -52,7 +53,7 @@ export default function Recommend() {
             privatecontent.slice(0, 3).map((item, index) => {
 
               return (
-                <Songlist key={item.id} width='370px' playcount={''} name={item.name} imgsrc={item.picUrl} />
+                <Songlist key={item.id} width='370px'  playcount={''} name={item.name} imgsrc={item.picUrl} />
               )
             })
           }
@@ -83,9 +84,9 @@ export default function Recommend() {
 
           {
             recommendmv.slice(0, 3).map((item, index) => {
-
+        
               return (
-                <Songlist key={item.id} width='370px' playcount={item.playCount} name={item.name} imgsrc={item.picUrl} />
+                <Songlist key={item.id} width='370px' height='230px'  playcount={item.playCount} name={item.name} imgsrc={item.picUrl} />
               )
             })
           }

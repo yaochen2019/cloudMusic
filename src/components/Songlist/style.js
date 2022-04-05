@@ -5,10 +5,12 @@ export const SonglistWarpper = styled.div`
 display: flex;
 position: relative;
 width: ${props => props.width};
+height: ${props => props.height};
 .cover-top{
     margin-top: 15px;
     position: relative;
     width: ${props => props.width};
+    height: ${props => props.height};
     
     transition: all 0.3s;
     .playbutton{
@@ -41,6 +43,7 @@ width: ${props => props.width};
 }
 img{ 
     width: ${props => props.width};
+    height: ${props => props.height};
     
     border-radius: 15px;
 }
@@ -50,6 +53,7 @@ img{
     position: absolute;
     top: 0px;
     width:${props => props.width};
+    height: ${props => props.height};
     height: 100%;
     border-radius: 15px;
     background-color:rgba(0,0,0,0.3);

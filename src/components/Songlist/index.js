@@ -2,7 +2,7 @@ import React from 'react'
 import { SonglistWarpper } from './style';
 import { Link } from 'react-router-dom';
 export default function Songlist(props) {
-    const {width,imgsrc,playcount,name} = props;
+    const {width,imgsrc,height,playcount,name,id} = props;
     function getplaycount(num){
       if(num.toString().length>7){
         return (num/100000000).toFixed(2);
@@ -18,8 +18,8 @@ export default function Songlist(props) {
     }
     
   return (
-    <SonglistWarpper width={width}>
-        <Link to="/recommend">
+    <SonglistWarpper width={width} height={height}>
+        <Link to={`/album/${id}`}>
         <div className='cover-top'>
             <img src={imgsrc} alt='指定文本' />
               <div className='mask'></div>

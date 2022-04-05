@@ -1,0 +1,2 @@
+export const CHANGE_SONG_LIST = "album/CHANGE_SONG_LIST"
+export const CHANGE_ALBUM_INFO = "album/CHANGE_ALBUM_INFO"

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Headwarpper = styled.ul`
+export const Headwarpper = styled.div`
   display: flex;
   flex-direction: row;
   position: fixed;
@@ -8,67 +8,101 @@ export const Headwarpper = styled.ul`
   left: 210px;
   right: 0;
   top: 0;
-  width: 100%;
-  height: 50px;
+  height: 75px;
   align-items: center;
+  justify-content: space-between;
   background-color: rgb(77,161,173);
-  .forwardbackwarpper{
-      height: 40px;
-      display: flex;
-      margin-left: 10px;
-      flex-grow: 1.5;  
-      align-items: center;
-      justify-content: center;
-      i{
-          margin-left: 10px;
-          font-size: 20px;
-          margin-right: 5px;
-      }
+    .headright{
+        margin-left: 20px;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        .history{
+            display: flex;
+            align-items: center;
+            height: 100%;
+            i{
+                font-size: 22px;
+                margin-left: 18px;
+            }
+            
+        }
+        .ant-input-group-wrapper{
+            margin-left: 20px;
+            
+            background-color: rgb(230,230,230);
+            border-radius: 15px;
+            .ant-input-wrapper{
+                border-radius: 15px;
+                background-color: rgb(230,230,230);
+                position: relative;
+                .ant-input-prefix {
+                   margin-right: 4px;
+                   background-color: rgb(230,230,230);
+                   border-radius: 15px;
+                }
+                .ant-input-affix-wrapper{
+                    margin-left: 32px;
+                    border-radius: 15px;
+                    border-top-left-radius: 0px;
+                    border-bottom-left-radius: 0px;
+                    background-color: rgb(230,230,230);
+                    .ant-input{
+                        border-radius: 10px;
+                        background-color: rgb(230,230,230);
 
-      
-  }
-  .search{
-    width: 200px;
-    height: 32px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    margin-left: 0px;
-    position: relative;
-    flex-grow: 2;
-    
-    .searchinput{
-        background-color: rgb(94,170,181);
-        border-radius: 16px;
-        input{
-            background-color: rgb(94,170,181);
-            &::placeholder{
-                font-size: 10px;
+                    }
+                }
+            
+                .ant-input-group-addon{
+                    
+                    position: absolute;
+                    top:0px;
+                    left:0px;
+                    width: 0px;
+                    border-radius: 15px;
+                    border-top-right-radius: 0px;
+                    border-bottom-right-radius: 0px;
+                    background-color: rgb(230,230,230);
+                    .ant-btn{
+                        border-radius: 15px;
+                        border-top-right-radius: 0px;
+                        border-bottom-right-radius: 0px;
+                        background-color: rgb(230,230,230);
+                    
+                        span{
+                            border-radius: 15px;
+                            background-color: rgb(230,230,230);
+                            
+                        }
+
+                    }
+                    
+
+                }
+
+            
+
             }
         }
 
     }
-            
-  }
-  .topbarright{
-      display: flex;
-    
-      margin-left: 300px;
-      flex-grow: 4;
-      align-items: center;
-      justify-content: center;
-      i,a,span{
-          flex-grow: 1;
-         
-      }
-      a{
-          color: white;
-      }
-      span{
-          margin-bottom: 5px;
-          color: black;
-      }
-      
-  }
+    .headleft{
+        margin-right: 20px;
+        display: flex;
+        height: 100%;
+        flex-direction: row;
+        align-items: center;
+        width: 250px;
+        justify-content: space-between;
+        span i a {
+            flex-grow:1;
+        }
+    }
+
+
+
 
 `

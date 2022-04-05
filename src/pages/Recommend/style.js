@@ -3,13 +3,11 @@ import styled from "styled-components";
 export const RecommendWarpper = styled.div`
 display: flex;
 position: relative;
-top:50px;
 margin: 0 auto;
-width:1200px;
+width:1240px;
 flex-direction: column;
-background-color: green;
-
-padding-bottom: 100px;
+background-color: rgb(249,249,249);
+padding: 60px 40px;
 .recommend{
   margin-top: 50px;
   display: flex;
