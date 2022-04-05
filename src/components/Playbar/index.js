@@ -97,7 +97,7 @@ const Playbar = memo(() =>{
       <Slider  onChange={sliderChange} onAfterChange={sliderAfterChange} value={progress}  defaultValue={30} disabled={false} />
        <div className='control'>
         <div className='left'>
-          <Link to='' className='image' ><img src={picUrl} alt='加' ></img></Link>
+          <Link to='/songplaypage' className='image' ><img src={picUrl} alt='加' ></img></Link>
           <div className='song' >
           <div className='songinfo'>
             <Link to='' className='song-name'>断桥残血</Link>

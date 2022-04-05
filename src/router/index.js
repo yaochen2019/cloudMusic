@@ -18,6 +18,7 @@ import Album from "../pages/Album"
 import Songplaylist from "../pages/Album/Songplaylist"
 import Collect from "../pages/Album/Collect"
 import Comment from "../pages/Album/Comment"
+import Songplaypage from "../pages/Songplaypage"
 export default [
     {
         path:'/recommend',
@@ -84,6 +85,10 @@ export default [
     {
         path:'/video',
         element:<Video/>
+    },
+    {
+        path:'/songplaypage',
+        element:<Songplaypage/>
     },
     {
         path:'/search/:searchkeywords',

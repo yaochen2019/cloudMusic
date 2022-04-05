@@ -14,11 +14,11 @@ export default function Main() {
       
       <Leftnavigation/>
       <Appright>
-      <Head/>
-      <Suspense fallback={<h1>Loading.....</h1>}>
-        {element}
-      </Suspense>
-      <Playbar/>
+        <Head/>
+          <Suspense fallback={<h1>Loading.....</h1>}>
+            {element}
+          </Suspense>
+        <Playbar/>
       </Appright>
     </div>
   )
