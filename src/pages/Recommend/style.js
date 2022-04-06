@@ -8,6 +8,7 @@ width:1240px;
 flex-direction: column;
 background-color: rgb(249,249,249);
 padding: 60px 40px;
+margin-bottom: 100px;
 .recommend{
   margin-top: 50px;
   display: flex;

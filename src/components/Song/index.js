@@ -2,6 +2,9 @@ import React from 'react'
 import { Songwarpper } from './style'
 export default function Song(props) {
     const {name,singer,album,time} = props
+ 
+
+   
   return (
     <Songwarpper>
         <div className='songfirst'>

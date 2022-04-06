@@ -55,6 +55,7 @@ font-size: 14px;
 }
 :hover>.songfirst>.selectbutton>i{
     display: flex;
+    cursor: pointer;
 }
 
 `
