@@ -1,19 +1,26 @@
 import React from 'react'
 import { Songwarpper } from './style'
+import { getSongDetailAction } from '../Playbar/store/actionCreator'
+import { useDispatch } from 'react-redux'
 export default function Song(props) {
-    const {name,singer,album,time} = props
+    const {name,singer,album,time,id} = props
+    const dispatch = useDispatch()
+
+    const playmusic = (id) => {
+      dispatch(getSongDetailAction(id))
+    }
  
 
    
   return (
-    <Songwarpper>
-        <div className='songfirst'>
+    <Songwarpper  onDoubleClick={e => playmusic(id)}>
+        <div className='songfirst' >
             <div className='songnamewarpper'>
             <i className='iconfont' >&#xe761;</i>
             <span className='text-nowrap songname'>{name}</span>
             </div>
             <div className='selectbutton' >
-            <i className='iconfont show' >&#xea6d;</i>
+            <i onClick={e => playmusic(id)} className='iconfont show' >&#xea6d;</i>
             <i className='iconfont show' >&#xe600;</i>
             <i className='iconfont show' >&#xeb9d;</i>
             </div>

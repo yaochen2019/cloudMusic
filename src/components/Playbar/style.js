@@ -125,6 +125,9 @@ export const Bottomwarpper = styled.div`
         justify-content: center;
         width: 300px;
         height: 68px;
+        .showplaylist{
+            margin-left: 20px;
+        }
         .song-words{
             cursor: pointer;
             margin-left: 20px;
@@ -145,6 +148,61 @@ export const Bottomwarpper = styled.div`
    
 
     }
+}
+.playlistwarpper{
+    position: fixed     ;
+    display: none;
+    right: 0;
+    bottom:0;
+    height: 934px;
+    border: 1px solid rgb(230,230,230);
+    width: 200px;
+    flex-direction: column;
+    overflow: visible;
+    overflow-y: scroll;
+    
+    align-items: center;
+    box-shadow: -6px 0 16px -8px rgb(0 0 0 / 8%), -9px 0 28px 0 rgb(0 0 0 / 5%), -12px 0 48px 16px rgb(0 0 0 / 3%);
+::-webkit-scrollbar {
+      width: 7px;
+      height: 10px;
+      /**/
+    }
+
+::-webkit-scrollbar-track {
+      background: rgb(239, 239, 239);
+      border-radius: 2px;
+    }
+
+::-webkit-scrollbar-thumb {
+      background: #bfbfbf;
+      border-radius: 10px;
+    }
+    .item-song{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius:10px ;
+        width: 80%;
+        height: 70px;
+        .songinfo{
+            .song-name{
+                font-size: 10px;
+            }
+            .singer-name{
+                font-size: 10px;
+                margin-top: 5px;
+            }
+        }
+        .delete{
+            font-size: 16px;
+            cursor: pointer;
+        }
+    }
+    .item-song:hover{
+        background-color: rgb(230,230,230);
+    }
+    
 }
 
 `

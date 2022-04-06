@@ -4,7 +4,7 @@ import { Slider } from 'antd'
 import { Link } from 'react-router-dom'
 import 'antd/dist/antd.css'
 import { useDispatch,useSelector,shallowEqual } from 'react-redux'
-import { getSongDetailAction } from './store/actionCreator'
+import { getSongDetailAction,changeCurrentSong } from './store/actionCreator'
 import { formatMinuteSecond,getPlaySong } from '../../util/format'
 
 
@@ -19,6 +19,8 @@ const Playbar = memo(() =>{
   const [progress,setprogress] = useState(0) ;
   const [isChange,setisChange] = useState(false);
   const [isplaying,setisplaying] = useState(false);
+  const playlistref = useRef()
+  const audioRef = useRef()
 
 
   //redux-react相关
@@ -27,16 +29,22 @@ const Playbar = memo(() =>{
     dispatch(getSongDetailAction(167876))
     },[dispatch])
   
-  const {currentSong} = useSelector(state=>({
-    currentSong:state.getIn(["player","currentSong"])
+  const {currentSong,playlist} = useSelector(state=>({
+    currentSong:state.getIn(["player","currentSong"]),
+    playlist:state.getIn(["player","playlist"])
   }),shallowEqual)
   useEffect(()=>{
     audioRef.current.src = getPlaySong(currentSong.id)
-
+    audioRef.current.play().then(res => {
+      setisplaying(true);
+    }).catch(err => {
+      setisplaying(false);
+    });
   },[currentSong])
 
 
   //other handle
+  console.log("currentSong",currentSong);
   
   const picUrl = (currentSong.al && currentSong.al.picUrl) || '';
   const singerName = (currentSong.ar && currentSong.ar[0].name) || '';
@@ -48,17 +56,13 @@ const Playbar = memo(() =>{
 
   //handle function
  
-  function changeicon(e){
-    if(!isplaying){
-      setisplaying(!isplaying)
-      audioRef.current.play()
-      e.target.innerHTML = '&#xea81;';
-    }else{
-      setisplaying(!isplaying)
-      audioRef.current.pause()
-      e.target.innerHTML = '&#xea82;';
-    }
-  }
+  const playMusic = useCallback(() => {
+    setisplaying(!isplaying);
+    isplaying ? audioRef.current.pause() : audioRef.current.play();
+  }, [isplaying]);
+  
+  
+  
   const timeUpdata = (e)=>{
     
     if(!isChange){
@@ -81,8 +85,60 @@ const Playbar = memo(() =>{
 
     
   },[duration])
-  //other hooks
-  const audioRef = useRef()
+
+  const changeMusic = (e,tag)=>{
+    if (e && e.stopPropagation){
+      e.stopPropagation();
+    }else{
+      e.cancelBubble = true;
+    }
+    dispatch(changeCurrentSong(tag))
+
+  }
+  const handleEnded = ()=>{
+    dispatch(changeCurrentSong(1))
+  }
+  const showplaylist = (e)=>{
+    if (e && e.stopPropagation){
+      e.stopPropagation();
+    }else{
+      e.cancelBubble = true;
+    }
+    playlistref.current.style.display = "flex"
+
+  }
+  const otherclicknone = (e)=>{
+    if (e && e.stopPropagation){
+      e.stopPropagation();
+    }else{
+      e.cancelBubble = true;
+    }
+    
+   
+  }
+  document.onclick = function(){
+    playlistref.current.style.display = 'none'
+  }
+  
+  const playmusic = (id) => {
+    dispatch(getSongDetailAction(id))
+
+  }
+  const playOrPause = () => {
+    const play = (
+        <span className="iconfont play" onClick={playMusic}>
+            &#xea81;
+        </span>
+    );
+    const pause = (
+        <span className="iconfont play" onClick={playMusic}>
+            &#xea82;
+        </span>
+    );
+    return isplaying ? play : pause;
+};
+  
+ 
 
   
   
@@ -113,9 +169,9 @@ const Playbar = memo(() =>{
         </div>
         <div className='center'>
           <i className='iconfont order'>&#xe6a1;</i>                                            
-          <i className='iconfont pre'>&#xe603;</i>
-          <span className='iconfont play' onClick={e => changeicon(e)}>&#xea82;</span>
-          <i className='iconfont next'>&#xe602;</i>
+          <i className='iconfont pre' onClick={e => changeMusic(e,-1)} >&#xe603;</i>
+          {playOrPause()}
+          <i className='iconfont next' onClick={e => changeMusic(e,1)} >&#xe602;</i>
           <i className='iconfont vloum'>&#xe87a;</i>
         </div>
         <div className='right'>
@@ -123,9 +179,24 @@ const Playbar = memo(() =>{
           <span className='divide'>/</span>
           <span className='totla-time' >{showDuration}</span>
           <span className='song-words' >词</span>
+          <button className='showplaylist' onClick={e => showplaylist(e)} >点击</button>
         </div>
         </div>
-        <audio ref={audioRef} onTimeUpdate={timeUpdata}/>
+        <audio ref={audioRef} onTimeUpdate={timeUpdata} onEnded={e => handleEnded(e)}/>
+        <div className='playlistwarpper' onClick={e => otherclicknone(e)} ref={playlistref} >
+          {
+            playlist.map((item,index)=>{
+              return (  <div className='item-song' key={item.id} onDoubleClick={e => playmusic(item.id)} >
+                      <div className='songinfo'>
+                      <div className='song-name'>{item.name}</div>
+                      <div className='singer-name'>{item.ar[0].name}</div>
+                        </div>
+                    <i className='iconfont delete'>&#xe8c1;</i>
+                </div>)
+            })
+          }
+
+        </div>
       
     </Bottomwarpper>
   )

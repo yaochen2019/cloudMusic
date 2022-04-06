@@ -20,7 +20,6 @@ export default function Songplaylist() {
     for (let i = 0; i < arr.length; i++) {
       res = res +' '+ arr[i].name
     }
-    console.log(res);
     return res
   }
 
@@ -36,7 +35,7 @@ export default function Songplaylist() {
      <div>
       {
       songlist.map((item, index) => {
-        return (<Song key={item.id} name={item.name} singer={getAll(item.ar)} album={item.al.name} time={'1'} />)
+        return (<Song key={item.id} id={item.id} name={item.name} singer={getAll(item.ar)} album={item.al.name} time={'1'} />)
         })
       }
      </div>

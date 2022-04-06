@@ -3,8 +3,9 @@ import styled from "styled-components";
 export const Headwarpper = styled.div`
   display: flex;
   flex-direction: row;
-  position: relative;
+  position: fixed;
   z-index: 99;
+  left:210px;
   right: 0;
   top: 0;
   height: 75px;

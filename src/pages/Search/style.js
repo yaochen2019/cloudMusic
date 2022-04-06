@@ -7,7 +7,7 @@ top:75px;
 margin: 0 auto;
 width:1200px;
 flex-direction: column;
-
+margin-bottom: 200px;
 .title{
     font-size: 32px;
     font-weight: 900;
