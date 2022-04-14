@@ -25,35 +25,35 @@ export default function Recommend() {
     dispatch(getRecommendMv())
     dispatch(getPrivateContent())
   }, [dispatch]);
-  console.log("recommends",recommends);
+
 
 
   return (
     <RecommendWarpper>
       <MyCarousel key={nanoid()} info={img} />
       <div className='recommend'>
-        <div className='recommend-title' ><span className='title' >推荐歌单</span><Link to='recommend'><span>更多{'>'}</span></Link></div>
+        <div className='recommend-title' ><span className='title' >推荐歌单</span><Link to='/recommend'><span>更多{'>'}</span></Link></div>
         <div className='recommend-list' >
 
           {
             recommends.slice(0, 5).map((item, index) => {
 
               return (
-                <Songlist key={item.id} id={item.id} width='200px'  playcount={item.playCount} name={item.name} imgsrc={item.picUrl} />
+                <Songlist isLink={true} key={item.id} id={item.id} width='200px'  playcount={item.playCount} name={item.name} imgsrc={item.picUrl} />
               )
             })
           }
         </div>
       </div>
       <div className='recommend'>
-        <div className='recommend-title' ><span className='title' >独家放送</span><Link to='recommend'><span>更多{'>'}</span></Link></div>
+        <div className='recommend-title' ><span className='title' >独家放送</span><Link to='/recommend'><span>更多{'>'}</span></Link></div>
         <div className='recommend-list' >
 
           {
             privatecontent.slice(0, 3).map((item, index) => {
 
               return (
-                <Songlist key={item.id} width='370px'  playcount={''} name={item.name} imgsrc={item.picUrl} />
+                <Songlist isLink={false} key={item.id} width='370px'  playcount={''} name={item.name} imgsrc={item.picUrl} />
               )
             })
           }
@@ -64,14 +64,14 @@ export default function Recommend() {
         <div className='recommend-title' >
           <div className='new-song' ><span className='title'>最新音乐</span>
             <div className='select-button'>
-              <Link to='all'>全部</Link>
-              <Link to='chinese'>华语</Link>
-              <Link to='euandam'>欧美</Link>
-              <Link to='japan'>日本</Link>
-              <Link to='korea'>韩国</Link>
+              <Link to='all' className='second'>全部</Link>
+              <Link to='chinese' className='second' >华语</Link>
+              <Link to='euandam' className='second' >欧美</Link>
+              <Link to='japan' className='second' >日本</Link>
+              <Link to='korea' className='second' >韩国</Link>
             </div>
           </div>
-          <Link to='recommend'><span>更多{'>'}</span></Link>
+          <Link to='/recommend'><span>更多{'>'}</span></Link>
         </div>
         <div className='recommend-list' >
           <Outlet />
@@ -79,14 +79,14 @@ export default function Recommend() {
 
       </div>
       <div className='recommend'>
-        <div className='recommend-title' ><span className='title'>推荐MV</span><Link to='recommend'><span>更多{'>'}</span></Link></div>
+        <div className='recommend-title' ><span className='title'>推荐MV</span><Link to='/recommend'><span>更多{'>'}</span></Link></div>
         <div className='recommend-list' >
 
           {
             recommendmv.slice(0, 3).map((item, index) => {
         
               return (
-                <Songlist key={item.id} width='370px' height='230px'  playcount={item.playCount} name={item.name} imgsrc={item.picUrl} />
+                <Songlist isLink={false} key={item.id} width='370px' height='230px'  playcount={item.playCount} name={item.name} imgsrc={item.picUrl} />
               )
             })
           }

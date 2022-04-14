@@ -1,14 +1,12 @@
-import React,{lazy,Suspense} from 'react'
+import React,{Suspense} from 'react'
 import Leftnavigation from '../../components/Leftnavigation'
 import Playbar from '../../components/Playbar'
 import Head from '../../components/Head'
-import { useRoutes } from 'react-router-dom'
-import router from '../../router'
 import { Appright } from './style'
-lazy(()=>import('../Search'))
+import GetRoutes from '../../router'
 
 export default function Main() {
-  const element = useRoutes(router)
+  const element = GetRoutes()
   return (
     <div>
       

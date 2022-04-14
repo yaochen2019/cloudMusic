@@ -6,6 +6,7 @@ padding: 8px 0px;
 display: flex;
 flex-direction: row;
 font-size: 14px;
+cursor: pointer;
 .songfirst{
     display: flex;
     width: 390px;

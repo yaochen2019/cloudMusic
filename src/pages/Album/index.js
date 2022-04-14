@@ -1,13 +1,15 @@
 import React,{useEffect}from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink ,useParams} from 'react-router-dom'
 import { useSelector ,useDispatch,shallowEqual } from 'react-redux'
 import { AlbumWarpper } from './style'
 import { getAlbumInfo } from './store/ActionCreator'
-import { useParams,Outlet } from 'react-router'
+import { Outlet } from 'react-router'
 
 
 export default function Album() {
     const {songid} = useParams()
+   
+
     const dispatch = useDispatch()
     const {albumInfo} = useSelector(state => ({ 
         albumInfo: state.getIn(['album','albuminfo'])
@@ -26,7 +28,7 @@ export default function Album() {
                 <div className='album-title'>{playlist.name}</div>
                 <div className='album-creator'><img className='creator-img' src={creator.avatarUrl} alt='图片正在加载'></img><div className='creator'>{creator.nickname}</div><span className='label' >#{playlist.tags}</span></div>
                 <div className='description text-nowrap' >{playlist.description}</div>
-                <div className='select-button' ><div className='play-all'></div><div className='collect'></div><div className='more'>...</div></div>
+                <div className='select-button' ><div className='play-all'>播放全部</div><div className='collect'>收藏</div><div className='more'>...</div></div>
             </div>
         </div>
         

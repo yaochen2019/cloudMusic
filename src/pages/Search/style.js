@@ -50,31 +50,17 @@ margin-bottom: 200px;
         }
     }
     .playall{
+        cursor: pointer;
         background-color: rgb(31,208,175);
     }
     .download,.addlist{
+        cursor: pointer;
         background-color:rgb(230,230,230);
     }
 
     
     
 }
-.listhead{
-    margin-top: 30px;
-    display: flex;
-    flex-direction: row;
-    .singer{
-        margin-left: 360px;
 
-    }
-    .album{
-        margin-left: 175px;
-    }
-    .time{
-        margin-left: 270px;
-
-    }
-
-}
 
 `

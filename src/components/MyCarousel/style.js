@@ -17,20 +17,27 @@ width: 100%;
           text-Align:center;
         }
 }
+
 .slick-dots{
     height: 10px;
     position: absolute;
-    bottom: -25px;
+    bottom: -30px;
     li{
+        margin-left: 10px;
         height: 10px;
         border-radius:50%;
         width: 10px !important;
+        background-color: black;
         button{
           height: 10px;
           border-radius:50%;
           width: 10px !important;
         }
+        
     }
+    
+    
+    
     li:hover button:hover{
         background-color: rgb(85,217,183);
     }

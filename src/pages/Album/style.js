@@ -56,15 +56,21 @@ padding-bottom: 100px;
             left: 0;
             bottom: 0;
             .play-all{
+                cursor: pointer;
                 width: 80px;
                 height: 30px;
+                line-height: 30px;
                 border-radius: 16px;
-                background-color: rgb(240,240,240);
+                text-align: center;
+                background-color: rgb(31,208,175);
             }
             .collect{
+                cursor: pointer;
                 width: 80px;
                 height: 30px;
+                line-height: 30px;
                 border-radius: 16px;
+                text-align: center;
                 margin-left: 10px;
                 background-color: rgb(240,240,240);
             }

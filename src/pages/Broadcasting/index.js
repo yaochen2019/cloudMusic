@@ -1,7 +1,7 @@
 import React from 'react'
-
+import { BroadcastingWarpper } from './style'
 export default function Broadcasting() {
   return (
-    <div>Broadcasting</div>
+    <BroadcastingWarpper>电台</BroadcastingWarpper>
   )
 }

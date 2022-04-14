@@ -12,17 +12,23 @@ export default function Head() {
   const onPressEnter = event => {
     navigate(`/search/${event.target.value}`)
   }
+  function forword(){
+    navigate(1)
+  }
+  function backword(){
+    navigate(-1)
+  }
   
   return (
     <Headwarpper>
       <div className='headright' >
         <div className='history' >
-          <i className='iconfont' >&#xe8ef;</i><i className='iconfont' >&#xe8f1;</i>
+          <i className='iconfont forword' onClick={backword} >&#xe8ef;</i><i className='iconfont backword' onClick={forword} >&#xe8f1;</i>
         </div>
-        <Search onPressEnter={onPressEnter} className='searchinput' placeholder="input search text" allowClear />
+        <Search onPressEnter={onPressEnter} className='searchinput' placeholder="搜索音乐" allowClear />
       </div>
       <div className='headleft' >
-        <Link  to="/login">登录</Link>
+        <Link to="/recommend">登录</Link>
         <i className='iconfont' >&#xe62c;</i>
         <i className='iconfont' >&#xe790;</i>
         <span>|</span>

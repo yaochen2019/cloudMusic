@@ -8,6 +8,12 @@ export default function Showsong(props) {
 
   return (
     <ShowsongWarpper>
+      <div className='listhead'>
+        <div className='song'>歌曲</div>
+        <div className='singer'>歌手</div>
+        <div className='album'>专辑</div>
+        <div className='time'>时长</div>
+      </div>
         <InfiniteListExample searchkeywords={searchkeywords}/>
     </ShowsongWarpper>
   )

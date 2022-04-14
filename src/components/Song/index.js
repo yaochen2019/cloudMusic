@@ -1,6 +1,6 @@
 import React from 'react'
 import { Songwarpper } from './style'
-import { getSongDetailAction } from '../Playbar/store/actionCreator'
+import { getSongDetailAction,getAddSongDetailAction } from '../Playbar/store/actionCreator'
 import { useDispatch } from 'react-redux'
 export default function Song(props) {
     const {name,singer,album,time,id} = props
@@ -8,6 +8,10 @@ export default function Song(props) {
 
     const playmusic = (id) => {
       dispatch(getSongDetailAction(id))
+    }
+    const addmusic = (id) => {
+      dispatch(getAddSongDetailAction(id))
+
     }
  
 
@@ -21,7 +25,7 @@ export default function Song(props) {
             </div>
             <div className='selectbutton' >
             <i onClick={e => playmusic(id)} className='iconfont show' >&#xea6d;</i>
-            <i className='iconfont show' >&#xe600;</i>
+            <i onClick={e => addmusic(id)} className='iconfont show' >&#xe600;</i>
             <i className='iconfont show' >&#xeb9d;</i>
             </div>
         </div>

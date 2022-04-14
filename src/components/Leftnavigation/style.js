@@ -6,36 +6,34 @@ display: flex;
 width: 210px;
 height: 100%;
 position: fixed;
-background-color: rgb(85,185,198);
+background-color: rgb(246,246,246);
 border: 1px ;
 flex-direction: column;
 align-items: center;
-.onlinemusic{
-  font-size: 10px;
+.QQmusic{
   margin-top: 40px;
+  display: block;
+  width: 50%;
+  height: 30px;
+  background: url(${require('./QQmusic.png')}) no-repeat;
+  background-size:90px 25px ;
   
 }
+.onlinemusic{
+
+  font-size: 10px;
+  margin-top: 30px;
+  align-self: flex-start;
+  margin-left: 40px;
+}
 `
-export const SymblWapper = styled.div`
-  display: flex;
-  width: 80px;
-  height: 40px;
-  position: relative;
-  margin-top: 4px;
-  font-size: 18px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  i{
-    font-size: 80px;
-  }
-`
+
 
 export const OnlineMusicWapper = styled.ul`
   display: flex;
-  width: 100%;
-  height: 30%;
-  margin-top: 20px;
+  width: 90%;
+  height: 20%;
+  margin-top: 7px;
   text-align: center;
   flex-direction: column;
   .selectitem{
@@ -46,17 +44,25 @@ export const OnlineMusicWapper = styled.ul`
     display: flex;
     height: 100%;
     width: 100%;
-    text-align: center;
     align-items: center;
-    justify-content: center;
+    border-radius: 10px;
+    .iconcolor{
+      margin-left: 25px;
+      color: black;
+    }
+    span{
+      margin-left: 10px;
+    }
 
-
-
+  }
+  a:active{
+    background-color: rgb(31,208,175);
   }
   
   a:hover{
-    background-color: rgb(122,199,209);
+    background-color: rgb(222,222,222);
   }
+
 
   
 `

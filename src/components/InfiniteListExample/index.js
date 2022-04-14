@@ -1,35 +1,34 @@
 import React, { useState, useEffect,memo } from 'react';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { List, Skeleton, Divider } from 'antd';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { getSearchlist } from '../../pages/Search/store/ActionCreator';
 import Song from '../Song';
 import { InfiniteListWarpper } from './style';
 
-
+import { formatMinuteSecond } from '../../util/format';
 
 const  InfiniteListExample = memo((props) => {
+  
 
   const { searchkeywords } = props
-  const [offset,setoffset] = useState(0)
   const [loading, setLoading] = useState(false);
   const [songlist,setSonglist] = useState([]);
-  let limit = 40
-  const { searchlist } = useSelector(state => ({
-    searchlist: state.getIn(["search", "searchlist"])
-  }), shallowEqual)
-  const { songs } = searchlist
-  const dispatch = useDispatch()
+  let offset = 0
+
   const loadMoreData = () => {
-    if(loading || offset > 10)
-    {
+    if (loading) {
       return;
     }
     setLoading(true);
-    dispatch(getSearchlist(searchkeywords, limit, 1,offset*limit))
-    setoffset(offset+1)
-    setSonglist([...songlist,...songs]);
-    setLoading(false);
+    fetch(`http://localhost:3000/cloudsearch?keywords=${searchkeywords}&limit=${40}&type=${1}&offset=${offset}`)
+      .then(res => res.json())
+      .then(body => {
+        setSonglist([...songlist, ...body.result.songs]);
+        setLoading(false);
+      })
+      .catch(() => {
+        setLoading(false);
+      });
+    offset += 1;
   };
   
 
@@ -40,11 +39,10 @@ const  InfiniteListExample = memo((props) => {
 
   useEffect(() => {
     loadMoreData();
-  }, [dispatch]);
-  console.log("searchkeywords",searchkeywords);
-  console.log("searchlist",searchlist);
-  console.log("songs",songs)
-  console.log("songlist",songlist);
+  },[]);
+
+
+
 
   
 
@@ -63,9 +61,12 @@ const  InfiniteListExample = memo((props) => {
       >
         <List
           dataSource={songlist}
-          renderItem={item => (
-            <Song name={item.name} id={item.id} singer={(item.ar && item.ar[0].name) || ''} album={(item.al && item.al.name) || ''} time={'1'} />
-          )}
+          renderItem={item =>{
+            const duration = item.dt || 0;
+            const showDuration = formatMinuteSecond(duration,"mm:ss");//总体时间
+            
+            return <Song name={item.name} id={item.id} singer={(item.ar && item.ar[0].name) || ''} album={(item.al && item.al.name) || ''} time={showDuration} />
+          }}
         />
       </InfiniteScroll>
     </InfiniteListWarpper>

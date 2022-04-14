@@ -2,7 +2,7 @@ import { Map } from "immutable";
 import * as actionTypes from './Constant'
 
 const defualtstate = Map({
-    searchlist:{songs:[{name:'许嵩',al:{name:'自定义'}},{name:'许嵩',al:{name:'自定义'}},{name:'许嵩',al:{name:'自定义'}},{name:'许嵩',al:{name:'自定义'}},{name:'许嵩',al:{name:'自定义'}}]}
+    searchlist:{}
 })
 
 

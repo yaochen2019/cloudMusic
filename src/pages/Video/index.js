@@ -1,7 +1,7 @@
 import React from 'react'
-
+import { VideoWarpper } from './style'
 export default function Video() {
   return (
-    <div>Video</div>
+    <VideoWarpper>视频</VideoWarpper>
   )
 }

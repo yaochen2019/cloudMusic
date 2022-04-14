@@ -10,7 +10,7 @@ export const Bottomwarpper = styled.div`
   right: 0;
   bottom: 0;
   height: 80px;
-  overflow: visible;
+  overflow: hidden;
   background-color: rgb(249,249,249);
 .ant-slider{
     position: relative;
@@ -81,6 +81,8 @@ export const Bottomwarpper = styled.div`
             }
             .icons{
                 display: flex;
+                width: 90px;
+                height: 30px;
                 justify-content: space-between;
                 i{
                     font-size: 17px;
@@ -126,6 +128,7 @@ export const Bottomwarpper = styled.div`
         width: 300px;
         height: 68px;
         .showplaylist{
+            border-radius: 6px;
             margin-left: 20px;
         }
         .song-words{
@@ -154,15 +157,17 @@ export const Bottomwarpper = styled.div`
     display: none;
     right: 0;
     bottom:0;
-    height: 934px;
+    height: 800px;
     border: 1px solid rgb(230,230,230);
+    border-radius: 10px;
     width: 200px;
     flex-direction: column;
     overflow: visible;
     overflow-y: scroll;
-    
     align-items: center;
     box-shadow: -6px 0 16px -8px rgb(0 0 0 / 8%), -9px 0 28px 0 rgb(0 0 0 / 5%), -12px 0 48px 16px rgb(0 0 0 / 3%);
+    overflow: visible;
+    background-color: rgb(222,222,222);
 ::-webkit-scrollbar {
       width: 7px;
       height: 10px;
@@ -179,28 +184,32 @@ export const Bottomwarpper = styled.div`
       border-radius: 10px;
     }
     .item-song{
+        cursor: pointer;
         display: flex;
         justify-content: space-between;
         align-items: center;
         border-radius:10px ;
-        width: 80%;
+        width: 98%;
         height: 70px;
         .songinfo{
             .song-name{
+                margin-left: 10px;
                 font-size: 10px;
             }
             .singer-name{
+                margin-left: 10px;
                 font-size: 10px;
                 margin-top: 5px;
             }
         }
         .delete{
+            margin-right: 10px;
             font-size: 16px;
             cursor: pointer;
         }
     }
     .item-song:hover{
-        background-color: rgb(230,230,230);
+        background-color: rgb(249,249,249);
     }
     
 }

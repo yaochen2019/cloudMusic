@@ -27,7 +27,7 @@ export default function EuAndAm() {
 
           return (
             <EuAndAmsonglistWarpper key={nanoid()} >
-              <Songlist key={item.album.id} width='200px' playcount={''} name={item.name} imgsrc={item.album.blurPicUrl} />
+              <Songlist isLink={false} key={item.album.id} width='200px' playcount={''} name={item.name} imgsrc={item.album.blurPicUrl} />
               <Link key={item.album.artists[0].id} to='/recommend' >{item.album.artists[0].name}</Link>
               <span>{getpublishTime(item.album.publishTime)}</span>
 

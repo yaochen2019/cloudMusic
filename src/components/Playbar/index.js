@@ -4,7 +4,7 @@ import { Slider } from 'antd'
 import { Link } from 'react-router-dom'
 import 'antd/dist/antd.css'
 import { useDispatch,useSelector,shallowEqual } from 'react-redux'
-import { getSongDetailAction,changeCurrentSong } from './store/actionCreator'
+import { getSongDetailAction,changeCurrentSong,deletePlaylistsong } from './store/actionCreator'
 import { formatMinuteSecond,getPlaySong } from '../../util/format'
 
 
@@ -26,13 +26,14 @@ const Playbar = memo(() =>{
   //redux-react相关
   const dispatch = useDispatch()
   useEffect(()=>{
-    dispatch(getSongDetailAction(167876))
+    dispatch(getSongDetailAction())
     },[dispatch])
   
   const {currentSong,playlist} = useSelector(state=>({
     currentSong:state.getIn(["player","currentSong"]),
     playlist:state.getIn(["player","playlist"])
   }),shallowEqual)
+
   useEffect(()=>{
     audioRef.current.src = getPlaySong(currentSong.id)
     audioRef.current.play().then(res => {
@@ -44,9 +45,9 @@ const Playbar = memo(() =>{
 
 
   //other handle
-  console.log("currentSong",currentSong);
   
   const picUrl = (currentSong.al && currentSong.al.picUrl) || '';
+  const songname = (currentSong && currentSong.name) || '';
   const singerName = (currentSong.ar && currentSong.ar[0].name) || '';
   const duration = currentSong.dt || 0;
   const showDuration = formatMinuteSecond(duration,"mm:ss");//总体时间
@@ -60,6 +61,10 @@ const Playbar = memo(() =>{
     setisplaying(!isplaying);
     isplaying ? audioRef.current.pause() : audioRef.current.play();
   }, [isplaying]);
+  const deletesong = function(index){
+    dispatch(deletePlaylistsong(index))
+
+  }
   
   
   
@@ -156,7 +161,7 @@ const Playbar = memo(() =>{
           <Link to='/songplaypage' className='image' ><img src={picUrl} alt='加' ></img></Link>
           <div className='song' >
           <div className='songinfo'>
-            <Link to='' className='song-name'>断桥残血</Link>
+            <Link to='' className='song-name'>{songname}</Link>
             <Link to='' className='singer-name'>{singerName}</Link>
           </div>
           
@@ -179,7 +184,7 @@ const Playbar = memo(() =>{
           <span className='divide'>/</span>
           <span className='totla-time' >{showDuration}</span>
           <span className='song-words' >词</span>
-          <button className='showplaylist' onClick={e => showplaylist(e)} >点击</button>
+          <button className='showplaylist' onClick={e => showplaylist(e)} >歌单</button>
         </div>
         </div>
         <audio ref={audioRef} onTimeUpdate={timeUpdata} onEnded={e => handleEnded(e)}/>
@@ -191,7 +196,7 @@ const Playbar = memo(() =>{
                       <div className='song-name'>{item.name}</div>
                       <div className='singer-name'>{item.ar[0].name}</div>
                         </div>
-                    <i className='iconfont delete'>&#xe8c1;</i>
+                    <i className='iconfont delete' onClick={()=>deletesong(index)} >&#xe8c1;</i>
                 </div>)
             })
           }

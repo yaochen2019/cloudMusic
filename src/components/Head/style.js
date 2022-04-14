@@ -11,7 +11,7 @@ export const Headwarpper = styled.div`
   height: 75px;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(77,161,173);
+  background-color: rgb(249,249,249);
     .headright{
         margin-left: 20px;
         height: 100%;
@@ -23,7 +23,8 @@ export const Headwarpper = styled.div`
             display: flex;
             align-items: center;
             height: 100%;
-            i{
+            .forword,.backword{
+                cursor: pointer;
                 font-size: 22px;
                 margin-left: 18px;
             }
@@ -97,8 +98,10 @@ export const Headwarpper = styled.div`
         align-items: center;
         width: 250px;
         justify-content: space-between;
-        span i a {
+        span,i,a {
             flex-grow:1;
+            color: black;
+            
         }
     }
 

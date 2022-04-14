@@ -4,6 +4,7 @@ import { useParams } from 'react-router'
 import { getSongList } from '../store/ActionCreator'
 import Song from '../../../components/Song'
 import { AlbumSonglistwarpper } from './style'
+import { formatMinuteSecond } from '../../../util/format'
 export default function Songplaylist() {
   const { songid } = useParams()
   const dispatch = useDispatch()
@@ -22,6 +23,8 @@ export default function Songplaylist() {
     }
     return res
   }
+  
+  
 
   return (
     
@@ -35,7 +38,9 @@ export default function Songplaylist() {
      <div>
       {
       songlist.map((item, index) => {
-        return (<Song key={item.id} id={item.id} name={item.name} singer={getAll(item.ar)} album={item.al.name} time={'1'} />)
+        const duration = item.dt || 0;
+        const showDuration = formatMinuteSecond(duration,"mm:ss");//总体时间
+        return (<Song key={item.id} id={item.id} name={item.name} singer={getAll(item.ar)} album={item.al.name} time={showDuration} />)
         })
       }
      </div>

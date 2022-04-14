@@ -6,7 +6,6 @@ position: relative;
 margin: 0 auto;
 width:1240px;
 flex-direction: column;
-background-color: rgb(249,249,249);
 padding: 60px 40px;
 margin-bottom: 100px;
 .recommend{
@@ -19,6 +18,12 @@ margin-bottom: 100px;
     display: flex !important;
     justify-content: space-between;
     flex-direction: row;
+    a{
+      color: black;
+    }
+    a:hover{
+      color:rgb(31,208,175) ;
+    }
   }
   .recommend-title{
       display: flex;
@@ -34,6 +39,20 @@ margin-bottom: 100px;
           display: flex;
           justify-content: space-between;
           align-items: center;
+          .second{
+            color: black;
+          }
+          .second:hover{
+            color:rgb(31,208,175);
+
+          }
+          .second:active{
+            color: rgb(31,208,175);
+          }
+          .second:link{
+            color: rgb(31,208,175);
+
+          }
           a{
             color: rgb(222,241,244);
             margin-left: 20px;
